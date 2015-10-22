@@ -6,7 +6,7 @@
         Close()
     End Sub
 
-    Private Sub resetForm()
+    Public Sub resetForm()
 
         'Clear the text boxes and set cursor
         firstNameUserTextBox.Text = ""
@@ -61,7 +61,4 @@
 
     End Sub
 
-    Private Sub Users_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
