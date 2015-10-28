@@ -78,6 +78,35 @@ Public Class accessDBManagerClass
 
     End Function
 
+    Public Function getTaskTime(Optional where As String = "") As OleDbDataReader
+
+        'SELECT SUM(TaskTime) FROM Tasks [WHERE <condition>]
+
+        'Build the query string
+        Dim q As String = "SELECT SUM(TaskTime) AS 'Total Minutes' FROM Tasks"
+
+        'Check if they have a where condition
+        If where <> "" Then
+            q &= " WHERE " & where
+        End If
+
+        Try
+            'Create the command
+            Dim cmd As New OleDbCommand(q, _connection)
+            Return cmd.ExecuteReader
+
+        Catch ex As Exception
+
+            MsgBox("Error occurred while fetching data from Tasks table " & vbNewLine &
+                   "Query string: " & q & vbNewLine &
+                   "Error message: " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
+
+        Return Nothing
+
+    End Function
+
     Public Function GetRelatedRecords(table1 As String,
                                       table2 As String,
                                       onField1 As String,
