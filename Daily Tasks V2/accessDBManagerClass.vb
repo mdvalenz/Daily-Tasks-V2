@@ -78,6 +78,49 @@ Public Class accessDBManagerClass
 
     End Function
 
+    Public Function innerJoinRecord(table As String,
+                               Optional fields As String = "*",
+                               Optional where As String = "",
+                               Optional orderBy As String = "") As OleDbDataReader
+
+        'SELECT <fields> FROM <table> <INNER JOINS> [WHERE <condition>] [ORDER BY <field> ASC|DESC]
+
+        'Build the query string
+        Dim q As String = "SELECT " & fields & " FROM (((" & table
+
+        'Add INNER JOINS
+        q &= " INNER JOIN Users ON Tasks.[User_ID] = Users.[ID]) 
+                INNER JOIN GeneralTags On Tasks.[GeneralTag_ID] = GeneralTags.[ID]) 
+                INNER JOIN SpecificTags On Tasks.[SpecificTag_ID] = SpecificTags.[ID]) 
+                INNER JOIN DepartmentTags On Tasks.[DepartmentTag_ID] = DepartmentTags.[ID] "
+
+        'Check if they have a where condition
+        If where <> "" Then
+            q &= " WHERE " & where
+        End If
+
+        'Check if they have an orderBy condition
+        If orderBy <> "" Then
+            q &= " ORDER BY " & orderBy
+        End If
+
+        Try
+            'Create the command
+            Dim cmd As New OleDbCommand(q, _connection)
+            Return cmd.ExecuteReader
+
+        Catch ex As Exception
+
+            MsgBox("Error occurred While fetching data from table " & table & vbNewLine &
+                   "Query String: " & q & vbNewLine &
+                   "Error message: " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
+
+        Return Nothing
+
+    End Function
+
     Public Function getTaskTime(Optional where As String = "") As OleDbDataReader
 
         'SELECT SUM(TaskTime) FROM Tasks [WHERE <condition>]

@@ -78,6 +78,7 @@ Partial Class Settings
         Me.Controls.Add(Me.DBSettingsLabel)
         Me.Controls.Add(Me.DBSettingsTextBox)
         Me.Name = "Settings"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Settings"
         Me.ResumeLayout(False)
         Me.PerformLayout()

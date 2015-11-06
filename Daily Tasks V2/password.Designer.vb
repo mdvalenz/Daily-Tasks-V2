@@ -55,6 +55,7 @@ Partial Class password
         Me.Controls.Add(Me.passwordButton)
         Me.Controls.Add(Me.passwordTextBox)
         Me.Name = "password"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Enter Password"
         Me.ResumeLayout(False)
         Me.PerformLayout()
