@@ -83,7 +83,7 @@ Public Class accessDBManagerClass
         'SELECT SUM(TaskTime) FROM Tasks [WHERE <condition>]
 
         'Build the query string
-        Dim q As String = "SELECT SUM(TaskTime) AS 'Total Minutes' FROM Tasks"
+        Dim q As String = "SELECT SUM(TaskTime) AS TotalMinutes FROM Tasks"
 
         'Check if they have a where condition
         If where <> "" Then
