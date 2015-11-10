@@ -13,7 +13,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="F:\QA\Daily Tasks\Database\Daily Task Log.accdb"</Value>
     </Setting>
-    <Setting Name="Password" Type="System.String" Scope="User">
+    <Setting Name="PasswordSalt" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PasswordHash" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PasswordCheck" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -80,12 +80,36 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property Password() As String
+        Public Property PasswordSalt() As String
             Get
-                Return CType(Me("Password"),String)
+                Return CType(Me("PasswordSalt"),String)
             End Get
             Set
-                Me("Password") = value
+                Me("PasswordSalt") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property PasswordHash() As String
+            Get
+                Return CType(Me("PasswordHash"),String)
+            End Get
+            Set
+                Me("PasswordHash") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property PasswordCheck() As String
+            Get
+                Return CType(Me("PasswordCheck"),String)
+            End Get
+            Set
+                Me("PasswordCheck") = value
             End Set
         End Property
     End Class
