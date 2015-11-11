@@ -30,11 +30,11 @@ Partial Class Settings
         Me.hashButton = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.dbTabPage = New System.Windows.Forms.TabPage()
-        Me.passwordTabPage = New System.Windows.Forms.TabPage()
         Me.DBSettingsTextBox = New System.Windows.Forms.TextBox()
+        Me.passwordTabPage = New System.Windows.Forms.TabPage()
+        Me.newPassTwoTextBox = New System.Windows.Forms.TextBox()
         Me.newPassOneTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.newPassTwoTextBox = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.dbTabPage.SuspendLayout()
         Me.passwordTabPage.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class Settings
         Me.hashButton.Name = "hashButton"
         Me.hashButton.Size = New System.Drawing.Size(170, 30)
         Me.hashButton.TabIndex = 51
-        Me.hashButton.Text = "Save new password"
+        Me.hashButton.Text = "Save New Password"
         Me.hashButton.UseVisualStyleBackColor = True
         '
         'TabControl1
@@ -125,6 +125,16 @@ Partial Class Settings
         Me.dbTabPage.Text = "Database"
         Me.dbTabPage.UseVisualStyleBackColor = True
         '
+        'DBSettingsTextBox
+        '
+        Me.DBSettingsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Daily_Tasks_V2.My.MySettings.Default, "DBLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
+        Me.DBSettingsTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DBSettingsTextBox.Location = New System.Drawing.Point(13, 33)
+        Me.DBSettingsTextBox.Name = "DBSettingsTextBox"
+        Me.DBSettingsTextBox.Size = New System.Drawing.Size(415, 26)
+        Me.DBSettingsTextBox.TabIndex = 0
+        Me.DBSettingsTextBox.Text = Global.Daily_Tasks_V2.My.MySettings.Default.DBLocation
+        '
         'passwordTabPage
         '
         Me.passwordTabPage.Controls.Add(Me.newPassTwoTextBox)
@@ -142,15 +152,14 @@ Partial Class Settings
         Me.passwordTabPage.Text = "Password"
         Me.passwordTabPage.UseVisualStyleBackColor = True
         '
-        'DBSettingsTextBox
+        'newPassTwoTextBox
         '
-        Me.DBSettingsTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Global.Daily_Tasks_V2.My.MySettings.Default, "DBLocation", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
-        Me.DBSettingsTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DBSettingsTextBox.Location = New System.Drawing.Point(13, 33)
-        Me.DBSettingsTextBox.Name = "DBSettingsTextBox"
-        Me.DBSettingsTextBox.Size = New System.Drawing.Size(415, 26)
-        Me.DBSettingsTextBox.TabIndex = 0
-        Me.DBSettingsTextBox.Text = Global.Daily_Tasks_V2.My.MySettings.Default.DBLocation
+        Me.newPassTwoTextBox.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.newPassTwoTextBox.Location = New System.Drawing.Point(13, 120)
+        Me.newPassTwoTextBox.Name = "newPassTwoTextBox"
+        Me.newPassTwoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.newPassTwoTextBox.Size = New System.Drawing.Size(414, 27)
+        Me.newPassTwoTextBox.TabIndex = 54
         '
         'newPassOneTextBox
         '
@@ -170,15 +179,6 @@ Partial Class Settings
         Me.Label1.Size = New System.Drawing.Size(200, 20)
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Enter New Password Twice"
-        '
-        'newPassTwoTextBox
-        '
-        Me.newPassTwoTextBox.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.newPassTwoTextBox.Location = New System.Drawing.Point(13, 120)
-        Me.newPassTwoTextBox.Name = "newPassTwoTextBox"
-        Me.newPassTwoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.newPassTwoTextBox.Size = New System.Drawing.Size(414, 27)
-        Me.newPassTwoTextBox.TabIndex = 54
         '
         'Settings
         '

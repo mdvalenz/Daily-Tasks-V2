@@ -1,4 +1,6 @@
-﻿Public Class Users
+﻿Imports System.Data.OleDb
+
+Public Class Users
 
     Private Sub saveExitUserButton_Click(sender As Object, e As EventArgs) Handles saveExitUserButton.Click
         Call saveUserRecord()
@@ -47,18 +49,27 @@
 
             Else
 
-                'Add new user
-                db.InsertRecord("Users", "FirstName,LastName,LoginID,Email", "'" &
-                                firstNameText & "','" &
-                                lastNameText & "','" &
-                                loginIDText & "','" &
-                                emailText & "'")
+                'Check if user already exists
+                Dim userCheck As OleDbDataReader = db.GetRecords("Users", "Email", "Email='" & emailText & "'")
 
+                If userCheck.HasRows Then
+                    MsgBox("User exists. Please try again")
+                Else
+
+                    'Add new user
+                    db.InsertRecord("Users", "FirstName,LastName,LoginID,Email", "'" &
+                                    firstNameText & "','" &
+                                    lastNameText & "','" &
+                                    loginIDText & "','" &
+                                    emailText & "'")
+                End If
             End If
-
 
         End If
 
     End Sub
 
+    Private Sub Users_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

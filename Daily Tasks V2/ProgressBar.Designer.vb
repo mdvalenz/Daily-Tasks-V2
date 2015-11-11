@@ -39,7 +39,7 @@ Partial Class ProgressBar
         Me.ClientSize = New System.Drawing.Size(343, 45)
         Me.Controls.Add(Me.exportProgressBar)
         Me.Name = "ProgressBar"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Export Monthly List"
         Me.ResumeLayout(False)
 

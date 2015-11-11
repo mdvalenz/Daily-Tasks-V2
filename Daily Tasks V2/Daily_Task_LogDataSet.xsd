@@ -97,7 +97,16 @@
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="GeneralTag" DataSetColumn="GeneralTag" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="Daily_Task_LogConnectionString (MySettings)" DbObjectName="GeneralTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, GeneralTag FROM GeneralTags ORDER BY GeneralTag</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SpecificTagsTableAdapter" GeneratorDataComponentClassName="SpecificTagsTableAdapter" Name="SpecificTags" UserDataComponentName="SpecificTagsTableAdapter">
             <MainSource>
@@ -311,7 +320,7 @@
   <xs:element name="Daily_Task_LogDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Daily_Task_LogDataSet" msprop:Generator_UserDSName="Daily_Task_LogDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DepartmentTags" msprop:Generator_TableClassName="DepartmentTagsDataTable" msprop:Generator_TableVarName="tableDepartmentTags" msprop:Generator_TablePropName="DepartmentTags" msprop:Generator_RowDeletingName="DepartmentTagsRowDeleting" msprop:Generator_RowChangingName="DepartmentTagsRowChanging" msprop:Generator_RowEvHandlerName="DepartmentTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentTagsRowDeleted" msprop:Generator_UserTableName="DepartmentTags" msprop:Generator_RowChangedName="DepartmentTagsRowChanged" msprop:Generator_RowEvArgName="DepartmentTagsRowChangeEvent" msprop:Generator_RowClassName="DepartmentTagsRow">
+        <xs:element name="DepartmentTags" msprop:Generator_TableClassName="DepartmentTagsDataTable" msprop:Generator_TableVarName="tableDepartmentTags" msprop:Generator_RowChangedName="DepartmentTagsRowChanged" msprop:Generator_TablePropName="DepartmentTags" msprop:Generator_RowDeletingName="DepartmentTagsRowDeleting" msprop:Generator_RowChangingName="DepartmentTagsRowChanging" msprop:Generator_RowEvHandlerName="DepartmentTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentTagsRowDeleted" msprop:Generator_RowClassName="DepartmentTagsRow" msprop:Generator_UserTableName="DepartmentTags" msprop:Generator_RowEvArgName="DepartmentTagsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -325,7 +334,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GeneralTags" msprop:Generator_TableClassName="GeneralTagsDataTable" msprop:Generator_TableVarName="tableGeneralTags" msprop:Generator_TablePropName="GeneralTags" msprop:Generator_RowDeletingName="GeneralTagsRowDeleting" msprop:Generator_RowChangingName="GeneralTagsRowChanging" msprop:Generator_RowEvHandlerName="GeneralTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="GeneralTagsRowDeleted" msprop:Generator_UserTableName="GeneralTags" msprop:Generator_RowChangedName="GeneralTagsRowChanged" msprop:Generator_RowEvArgName="GeneralTagsRowChangeEvent" msprop:Generator_RowClassName="GeneralTagsRow">
+        <xs:element name="GeneralTags" msprop:Generator_TableClassName="GeneralTagsDataTable" msprop:Generator_TableVarName="tableGeneralTags" msprop:Generator_RowChangedName="GeneralTagsRowChanged" msprop:Generator_TablePropName="GeneralTags" msprop:Generator_RowDeletingName="GeneralTagsRowDeleting" msprop:Generator_RowChangingName="GeneralTagsRowChanging" msprop:Generator_RowEvHandlerName="GeneralTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="GeneralTagsRowDeleted" msprop:Generator_RowClassName="GeneralTagsRow" msprop:Generator_UserTableName="GeneralTags" msprop:Generator_RowEvArgName="GeneralTagsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -339,7 +348,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SpecificTags" msprop:Generator_TableClassName="SpecificTagsDataTable" msprop:Generator_TableVarName="tableSpecificTags" msprop:Generator_TablePropName="SpecificTags" msprop:Generator_RowDeletingName="SpecificTagsRowDeleting" msprop:Generator_RowChangingName="SpecificTagsRowChanging" msprop:Generator_RowEvHandlerName="SpecificTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="SpecificTagsRowDeleted" msprop:Generator_UserTableName="SpecificTags" msprop:Generator_RowChangedName="SpecificTagsRowChanged" msprop:Generator_RowEvArgName="SpecificTagsRowChangeEvent" msprop:Generator_RowClassName="SpecificTagsRow">
+        <xs:element name="SpecificTags" msprop:Generator_TableClassName="SpecificTagsDataTable" msprop:Generator_TableVarName="tableSpecificTags" msprop:Generator_RowChangedName="SpecificTagsRowChanged" msprop:Generator_TablePropName="SpecificTags" msprop:Generator_RowDeletingName="SpecificTagsRowDeleting" msprop:Generator_RowChangingName="SpecificTagsRowChanging" msprop:Generator_RowEvHandlerName="SpecificTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="SpecificTagsRowDeleted" msprop:Generator_RowClassName="SpecificTagsRow" msprop:Generator_UserTableName="SpecificTags" msprop:Generator_RowEvArgName="SpecificTagsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -353,7 +362,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Tasks" msprop:Generator_TableClassName="TasksDataTable" msprop:Generator_TableVarName="tableTasks" msprop:Generator_TablePropName="Tasks" msprop:Generator_RowDeletingName="TasksRowDeleting" msprop:Generator_RowChangingName="TasksRowChanging" msprop:Generator_RowEvHandlerName="TasksRowChangeEventHandler" msprop:Generator_RowDeletedName="TasksRowDeleted" msprop:Generator_UserTableName="Tasks" msprop:Generator_RowChangedName="TasksRowChanged" msprop:Generator_RowEvArgName="TasksRowChangeEvent" msprop:Generator_RowClassName="TasksRow">
+        <xs:element name="Tasks" msprop:Generator_TableClassName="TasksDataTable" msprop:Generator_TableVarName="tableTasks" msprop:Generator_RowChangedName="TasksRowChanged" msprop:Generator_TablePropName="Tasks" msprop:Generator_RowDeletingName="TasksRowDeleting" msprop:Generator_RowChangingName="TasksRowChanging" msprop:Generator_RowEvHandlerName="TasksRowChangeEventHandler" msprop:Generator_RowDeletedName="TasksRowDeleted" msprop:Generator_RowClassName="TasksRow" msprop:Generator_UserTableName="Tasks" msprop:Generator_RowEvArgName="TasksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -380,7 +389,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -440,10 +449,10 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="DepartmentTagsTasks" msdata:parent="DepartmentTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="DepartmentTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="DepartmentTagsTasks" msprop:Generator_ParentPropName="DepartmentTagsRow" msprop:Generator_RelationVarName="relationDepartmentTagsTasks" msprop:Generator_UserParentTable="DepartmentTags" />
-      <msdata:Relationship name="GeneralTagsTasks" msdata:parent="GeneralTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="GeneralTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="GeneralTagsTasks" msprop:Generator_ParentPropName="GeneralTagsRow" msprop:Generator_RelationVarName="relationGeneralTagsTasks" msprop:Generator_UserParentTable="GeneralTags" />
-      <msdata:Relationship name="PersonTableTasks" msdata:parent="Users" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="User_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="PersonTableTasks" msprop:Generator_RelationVarName="relationPersonTableTasks" msprop:Generator_UserParentTable="Users" msprop:Generator_ParentPropName="UsersRow" />
-      <msdata:Relationship name="SpecificTagsTasks" msdata:parent="SpecificTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="SpecificTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="SpecificTagsTasks" msprop:Generator_ParentPropName="SpecificTagsRow" msprop:Generator_RelationVarName="relationSpecificTagsTasks" msprop:Generator_UserParentTable="SpecificTags" />
+      <msdata:Relationship name="DepartmentTagsTasks" msdata:parent="DepartmentTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="DepartmentTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="DepartmentTagsTasks" msprop:Generator_RelationVarName="relationDepartmentTagsTasks" msprop:Generator_UserParentTable="DepartmentTags" msprop:Generator_ParentPropName="DepartmentTagsRow" />
+      <msdata:Relationship name="GeneralTagsTasks" msdata:parent="GeneralTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="GeneralTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="GeneralTagsTasks" msprop:Generator_RelationVarName="relationGeneralTagsTasks" msprop:Generator_UserParentTable="GeneralTags" msprop:Generator_ParentPropName="GeneralTagsRow" />
+      <msdata:Relationship name="PersonTableTasks" msdata:parent="Users" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="User_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="PersonTableTasks" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_RelationVarName="relationPersonTableTasks" msprop:Generator_UserParentTable="Users" />
+      <msdata:Relationship name="SpecificTagsTasks" msdata:parent="SpecificTags" msdata:child="Tasks" msdata:parentkey="ID" msdata:childkey="SpecificTag_ID" msprop:Generator_UserChildTable="Tasks" msprop:Generator_ChildPropName="GetTasksRows" msprop:Generator_UserRelationName="SpecificTagsTasks" msprop:Generator_RelationVarName="relationSpecificTagsTasks" msprop:Generator_UserParentTable="SpecificTags" msprop:Generator_ParentPropName="SpecificTagsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
