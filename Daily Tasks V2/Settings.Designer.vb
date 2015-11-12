@@ -22,6 +22,7 @@ Partial Class Settings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.exitSettingsButton = New System.Windows.Forms.Button()
         Me.BrowseSettingsButton = New System.Windows.Forms.Button()
         Me.DBSettingsLabel = New System.Windows.Forms.Label()
@@ -187,6 +188,7 @@ Partial Class Settings
         Me.ClientSize = New System.Drawing.Size(554, 322)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.exitSettingsButton)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Settings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Settings"
