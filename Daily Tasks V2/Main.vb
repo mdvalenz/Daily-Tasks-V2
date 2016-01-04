@@ -209,6 +209,7 @@ Public Class Main
             Case 12
                 startDateTimeMainPicker.Value = DateSerial(Today.Year - 1, selectedMonth, 1)
                 endDateTimeMainPicker.Value = DateSerial(Today.Year - 1, selectedMonth + 1, 0)
+                filePrefix = Format(startDateTimeMainPicker.Value, "yyyy-MM")
         End Select
 
         'Get userFullName
